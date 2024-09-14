@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-09-13T15:29:19 IST" name="Default suite" finished-at="2024-09-13T15:29:39 IST" duration-ms="19467">
+    <groups>
+    </groups>
+    <test started-at="2024-09-13T15:29:19 IST" name="Default test" finished-at="2024-09-13T15:29:39 IST" duration-ms="19467">
+      <class name="testCases.TC_002_Gift_Selection">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testCases.TC_002_Gift_Selection@74e28667]" started-at="2024-09-13T15:29:19 IST" name="setUp" finished-at="2024-09-13T15:29:30 IST" duration-ms="10523" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyGiftErrorMessage()[pri:0, instance:testCases.TC_002_Gift_Selection@74e28667]" started-at="2024-09-13T15:29:30 IST" name="verifyGiftErrorMessage" finished-at="2024-09-13T15:29:36 IST" duration-ms="5891" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyGiftErrorMessage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC_002_Gift_Selection@74e28667]" started-at="2024-09-13T15:29:36 IST" name="tearDown" finished-at="2024-09-13T15:29:39 IST" duration-ms="2979" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- testCases.TC_002_Gift_Selection -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
