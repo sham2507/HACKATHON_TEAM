@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -32,11 +33,7 @@ public class GiftPage extends BasePage{
 	@FindBy(xpath="//input[@id='toggleSwitchGiftCard']")
 	WebElement toggle_multiple_person_checkbox;
 	
-	@FindBy(xpath="//input[@name='Recipient 1']")
-	WebElement recipient_1_input;
 	
-	@FindBy(xpath="//input[@name='Recipient 2']")
-	WebElement recipient_2_input;
 	
 	@FindBy(xpath="//input[@name='senderName']")
 	WebElement sender_name_input;
@@ -75,17 +72,25 @@ public class GiftPage extends BasePage{
 		js.executeScript("arguments[0].click();",driver.findElement(birthday_gift_button));
 	}
 	
-	public String fillGiftSection(String amt, String senderName, String senderMobileNo,String senderEmailId) {
+	public String fillGiftSection(String amt, String senderName, String senderMobileNo,String senderEmailId,String quantity) {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(choose_amount_label));
 		
 		amount_input.clear();
 		amount_input.sendKeys(amt);
+		System.out.println(quantity);
 		
-		js.executeScript("arguments[0].click();",quantity_increase_button);
+		for(int i = 0;i<Integer.parseInt(quantity)-1;i++) {
+			js.executeScript("arguments[0].click();",quantity_increase_button);
+		}
+		
 		js.executeScript("arguments[0].click();",toggle_multiple_person_checkbox);
 		
-		recipient_1_input.sendKeys("9988554433");
-		recipient_2_input.sendKeys("5544334455");
+		
+		
+		for(int i = 1;i<=Integer.parseInt(quantity);i++) {			
+			WebElement recipient_input = driver.findElement(By.xpath("//input[@name='Recipient "+i+"']"));
+			recipient_input.sendKeys(RandomStringUtils.randomNumeric(10));
+		}
 				
 		
 		sender_name_input.sendKeys(senderName);

@@ -3,11 +3,13 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="testCases.Sample">
+      <class name="testCases.TC_002_Gift_Selection">
         <methods>
-          <include name="printData"/>
+          <include name="setUp"/>
+          <include name="verifyGiftErrorMessage" invocation-numbers="0"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- testCases.Sample -->
+      </class> <!-- testCases.TC_002_Gift_Selection -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

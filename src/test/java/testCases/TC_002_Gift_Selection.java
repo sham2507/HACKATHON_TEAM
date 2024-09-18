@@ -28,15 +28,14 @@ WebDriver driver;
 	}
 	
 	@Test(dataProvider="giftDetails",dataProviderClass=dataProvider.class)
-	void verifyGiftErrorMessage(String amt, String senderName, String senderMobileNo,String senderEmailId){
+	void verifyGiftErrorMessage(String amt, String senderName, String senderMobileNo,String senderEmailId,String quantity){
 		GiftPage g = new GiftPage(driver);
 		g.switchToGiftsSection();	
 		
 		//place this value in the data file (like in json) 
 		String expected_message ="Please enter a valid Email id."; 
-		String actual_message =g.fillGiftSection(amt,senderName,senderMobileNo,senderEmailId); 
+		String actual_message =g.fillGiftSection(amt,senderName,senderMobileNo,senderEmailId,quantity); 
 		System.out.println(actual_message);
-		
 		Assert.assertEquals(actual_message,expected_message);
 	}
 

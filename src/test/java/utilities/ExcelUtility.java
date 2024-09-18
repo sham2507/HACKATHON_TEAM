@@ -45,12 +45,20 @@ public class ExcelUtility {
 					data[i-1][j] = cell.getStringCellValue();
 					System.out.println(cell.getStringCellValue());
 				}else if(cell.getCellType().equals(CellType.NUMERIC)){
-					data[i-1][j] = cell.getNumericCellValue()+"";
-					System.out.println(cell.getNumericCellValue()+"");
+					String reformattedString = reformatter(cell.getNumericCellValue());
+					//data[i-1][j] = cell.getNumericCellValue()+"";
+					data[i-1][j] = reformattedString;
+					System.out.println(reformattedString);
 				}
 			}
-		}
-		
+		}		
 		return data;
+	}
+	
+	public static String reformatter(double value) {
+		String convertedString = value+"";
+		int index = convertedString.indexOf(".");
+		convertedString = convertedString.substring(0, index);
+		return convertedString;		
 	}
 }
