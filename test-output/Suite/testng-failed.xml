@@ -3,20 +3,11 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="testCases.TC_001_Cab_Booking">
+      <class name="testCases.Sample">
         <methods>
-          <include name="setUp"/>
-          <include name="verifyMinimumPrice"/>
-          <include name="tearDown"/>
+          <include name="printData"/>
         </methods>
-      </class> <!-- testCases.TC_001_Cab_Booking -->
-      <class name="testCases.TC_002_Gift_Selection">
-        <methods>
-          <include name="setUp"/>
-          <include name="verifyGiftErrorMessage"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- testCases.TC_002_Gift_Selection -->
+      </class> <!-- testCases.Sample -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

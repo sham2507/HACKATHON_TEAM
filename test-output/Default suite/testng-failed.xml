@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.TC_001_Cab_Booking">
+      <class name="testCases.TC_002_Gift_Selection">
         <methods>
           <include name="setUp"/>
-          <include name="verifyMinimumPrice"/>
+          <include name="verifyGiftErrorMessage" invocation-numbers="0"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- testCases.TC_001_Cab_Booking -->
+      </class> <!-- testCases.TC_002_Gift_Selection -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -53,6 +53,7 @@ public class CabsPage extends BasePage{
 		int actual_result = Integer.parseInt(driver.findElement(price_label_locator).getText().replace("₹","").replace(",","").trim());
 		
 		
+		
 		return actual_result ==prices_list.get(0);
 	}
 

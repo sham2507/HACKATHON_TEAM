@@ -47,20 +47,13 @@ public class HomePage extends BasePage{
 	WebElement sample_presented_date_label;
 	
 	
-	By departure_date_value_button = By.xpath("//div[@aria-label='Sat Sep 28 2024']");
+	
 	
 	
 	@FindBy(xpath="//*[@id=\"top-banner\"]/div[2]//label[@for='pickupTime']")
 	WebElement sample_pick_up_time_button;
 	
-	@FindBy(xpath="//span[contains(@class,'hrSlotItemChild') and text()='06  Hr']/parent::li")
-	WebElement hour_value_button;
 	
-	@FindBy(xpath="//span[@class='minSlotItemChild' and text()='30  min']/parent::li")
-	WebElement min_value_button;
-	
-	@FindBy(xpath="//span[contains(@class,'meridianSlotItemChild') and text()='AM']/parent::li")
-	WebElement meridian_slot_value;
 	
 	@FindBy(xpath="//span[@class='applyBtnText']")
 	WebElement apply_pickUp_time_button;
@@ -77,12 +70,17 @@ public class HomePage extends BasePage{
 	By adult_count_options = By.xpath("//li[@data-cy='GuestSelect$$_323']");
 	
 	
-	public void closeDialog() {			
-		//waiting for the dialog box to appear
-		wait.until(ExpectedConditions.visibilityOfElementLocated(login_dialog));
+	public void closeDialog() {
+		try {
+			//waiting for the dialog box to appear
+			wait.until(ExpectedConditions.visibilityOfElementLocated(login_dialog));
+			
+			//closing the dialog button after it appears
+			driver.findElement(login_dialog).click();
+		}catch(Exception e) {
+			return;
+		}
 		
-		//closing the dialog button after it appears
-		driver.findElement(login_dialog).click();
 	}
 	
 	
@@ -117,7 +115,7 @@ public class HomePage extends BasePage{
 	
 	
 	//now we can hardCode and in future we can change to dynamic data concept
-	public void fillCabData(){
+	public void fillCabData(String from, String to, String date, String pickUpHr, String pickUpMin, String pickUpMeridian){
 		
 		//the logic is there are two input boxes present for getting one input, so we
 		//first we need to click the fake input box and second click the next input box and then,
@@ -129,7 +127,7 @@ public class HomePage extends BasePage{
 		
 		//clicking the main input box and sending the values 
 		driver.findElement(main_from_input_box).click();
-		driver.findElement(main_from_input_box).sendKeys("Delhi");
+		driver.findElement(main_from_input_box).sendKeys(from);
 		
 		//waiting for the recommendation to complete and clicking the first recommended city
 		wait.until(ExpectedConditions.visibilityOfElementLocated(first_recommended_from_city));
@@ -140,7 +138,7 @@ public class HomePage extends BasePage{
 		//input box, but 
 		//in "to" input box automatically both the fake and real input boxes will be clicked and so just sending 
 		//the values		
-		main_to_input_box.sendKeys("manali");
+		main_to_input_box.sendKeys(to);
 		
 		//waiting until the "to" cities are recommended
 		wait.until(ExpectedConditions.textToBe(recommended_cities_label,"SUGGESTIONS"));
@@ -150,12 +148,18 @@ public class HomePage extends BasePage{
 		//clicking the date section
 		sample_presented_date_label.click();
 		
+		By departure_date_value_button = By.xpath("//div[@aria-label='"+date+"']");
 		//wating for the custom date section to be appeared
 		wait.until(ExpectedConditions.visibilityOfElementLocated(departure_date_value_button));
 		driver.findElement(departure_date_value_button).click();
 		
 		//clicking the pickup time button
 		sample_pick_up_time_button.click();
+		
+		WebElement hour_value_button = driver.findElement(By.xpath("//span[contains(@class,'hrSlotItemChild') and text()='"+pickUpHr+"']/parent::li"));
+		WebElement min_value_button = driver.findElement(By.xpath("//span[@class='minSlotItemChild' and text()='"+pickUpMin+"']/parent::li"));
+		WebElement meridian_slot_value = driver.findElement(By.xpath("//span[contains(@class,'meridianSlotItemChild') and text()='"+pickUpMeridian+"']/parent::li"));
+		
 		
 		//clicking the hr value from dropdown
 		js.executeScript("arguments[0].click();",hour_value_button );

@@ -1,7 +1,5 @@
 package testCases;
 
-import java.util.List;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -11,6 +9,7 @@ import org.testng.annotations.Test;
 
 import pageObjects.CabsPage;
 import pageObjects.HomePage;
+import utilities.dataProvider;
 
 public class TC_001_Cab_Booking {
 	
@@ -30,13 +29,13 @@ public class TC_001_Cab_Booking {
 		driver.quit();
 	}
 	
-	@Test	
-	void verifyMinimumPrice() {
+	@Test(dataProvider="bookingDetails",dataProviderClass=dataProvider.class)
+	void verifyMinimumPrice(String from, String to, String date, String pickUpHr, String pickUpMin, String pickUpMeridian) {
 		HomePage h = new HomePage(driver);
 		
 		h.closeDialog();
 		h.clickCabsSection();
-		h.fillCabData();
+		h.fillCabData(from, to, date, pickUpHr, pickUpMin, pickUpMeridian);
 		
 		CabsPage c = new CabsPage(driver);
 		
@@ -44,7 +43,7 @@ public class TC_001_Cab_Booking {
 		//optimize it in the way like, get the list of all the prices and sort it and do it in the way
 		String expected_result = "₹ 5,824";
 		boolean verificationResult = c.getPriceDetails();
-		
+		//h.relocateToHomePage();
 		Assert.assertTrue(verificationResult);
 		
 	}

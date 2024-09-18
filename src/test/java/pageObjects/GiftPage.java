@@ -75,11 +75,11 @@ public class GiftPage extends BasePage{
 		js.executeScript("arguments[0].click();",driver.findElement(birthday_gift_button));
 	}
 	
-	public String fillGiftSection() {
+	public String fillGiftSection(String amt, String senderName, String senderMobileNo,String senderEmailId) {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(choose_amount_label));
 		
 		amount_input.clear();
-		amount_input.sendKeys("5000");
+		amount_input.sendKeys(amt);
 		
 		js.executeScript("arguments[0].click();",quantity_increase_button);
 		js.executeScript("arguments[0].click();",toggle_multiple_person_checkbox);
@@ -88,11 +88,11 @@ public class GiftPage extends BasePage{
 		recipient_2_input.sendKeys("5544334455");
 				
 		
-		sender_name_input.sendKeys("Sham");
+		sender_name_input.sendKeys(senderName);
 		
-		sender_mobile_no_input.sendKeys("9988776655");
+		sender_mobile_no_input.sendKeys(senderMobileNo);
 		
-		sender_email_input.sendKeys("gmail.com");
+		sender_email_input.sendKeys(senderEmailId);
 		
 		submit_button.click();
 		

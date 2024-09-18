@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import pageObjects.GiftPage;
+import utilities.dataProvider;
 
 public class TC_002_Gift_Selection {
 WebDriver driver;
@@ -26,14 +27,14 @@ WebDriver driver;
 		driver.quit();
 	}
 	
-	@Test
-	void verifyGiftErrorMessage() {
+	@Test(dataProvider="giftDetails",dataProviderClass=dataProvider.class)
+	void verifyGiftErrorMessage(String amt, String senderName, String senderMobileNo,String senderEmailId){
 		GiftPage g = new GiftPage(driver);
 		g.switchToGiftsSection();	
 		
 		//place this value in the data file (like in json) 
 		String expected_message ="Please enter a valid Email id."; 
-		String actual_message =g.fillGiftSection(); 
+		String actual_message =g.fillGiftSection(amt,senderName,senderMobileNo,senderEmailId); 
 		System.out.println(actual_message);
 		
 		Assert.assertEquals(actual_message,expected_message);
