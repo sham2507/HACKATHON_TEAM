@@ -1,5 +1,7 @@
 package testCases;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -11,12 +13,14 @@ import pageObjects.HomePage;
 
 public class TC_003_Hotel_Booking {
 	WebDriver driver;
+	Logger logger;
 	@BeforeClass
 	void setUp() {
 		driver = new ChromeDriver();
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
 		driver.get("https://www.makemytrip.com/");
+		logger = LogManager.getLogger(this.getClass());
 	}
 	
 	@AfterClass
@@ -27,7 +31,7 @@ public class TC_003_Hotel_Booking {
 	
 	@Test
 	void getAdultsCount() {
-		
+		logger.info("***** Test Case 003 started execution  *****");
 		HomePage h = new HomePage(driver);
 		h.closeDialog();
 		h.clickHotelsSection();
@@ -36,6 +40,7 @@ public class TC_003_Hotel_Booking {
 		System.out.println(count);
 		
 		Assert.assertTrue(true);		
+		logger.info("***** Test Case 003 completed execution  *****");
 	}
 
 }

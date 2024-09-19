@@ -32,23 +32,21 @@ public class ExcelUtility {
 		
 		data = new String[rowCount-1][colCount];
 		
-		System.out.println(rowCount);
-		System.out.println(colCount);
 		
 		for(int i = 1; i<rowCount;i++) {
-			System.out.println(i);
+		
 			row = sh.getRow(i);
 			for(int j = 0;j < colCount ; j++) {
-				System.out.println(j);
+		
 				cell = row.getCell(j);		
 				if(cell.getCellType().equals(CellType.STRING)) {
 					data[i-1][j] = cell.getStringCellValue();
-					System.out.println(cell.getStringCellValue());
+		
 				}else if(cell.getCellType().equals(CellType.NUMERIC)){
 					String reformattedString = reformatter(cell.getNumericCellValue());
 					//data[i-1][j] = cell.getNumericCellValue()+"";
 					data[i-1][j] = reformattedString;
-					System.out.println(reformattedString);
+		
 				}
 			}
 		}		

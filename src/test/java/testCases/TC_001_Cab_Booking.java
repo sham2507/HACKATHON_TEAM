@@ -1,5 +1,7 @@
 package testCases;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -14,6 +16,7 @@ import utilities.dataProvider;
 public class TC_001_Cab_Booking {
 	
 	WebDriver driver;
+	Logger logger;
 	
 	@BeforeClass
 	void setUp() {
@@ -21,6 +24,7 @@ public class TC_001_Cab_Booking {
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
 		driver.get("https://www.makemytrip.com/");
+		logger = LogManager.getLogger(this.getClass());
 	}
 	
 	@AfterClass
@@ -31,6 +35,7 @@ public class TC_001_Cab_Booking {
 	
 	@Test(dataProvider="bookingDetails",dataProviderClass=dataProvider.class)
 	void verifyMinimumPrice(String from, String to, String date, String pickUpHr, String pickUpMin, String pickUpMeridian) {
+		logger.info("***** Test Case 01 Started *****");
 		HomePage h = new HomePage(driver);
 		
 		h.closeDialog();
@@ -45,6 +50,7 @@ public class TC_001_Cab_Booking {
 		boolean verificationResult = c.getPriceDetails();
 		//h.relocateToHomePage();
 		Assert.assertTrue(verificationResult);
+		logger.info("***** Test Case 01 Completed Execution *****");
 		
 	}
 	

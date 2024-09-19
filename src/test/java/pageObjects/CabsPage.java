@@ -29,14 +29,19 @@ public class CabsPage extends BasePage{
 	
 	public boolean getPriceDetails() {
 		
-		//waiting until the filter option is available		
+		//waiting until the filter option is available	
+		logger.info("***** Waiting for the list of cabs page to load  *****");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(filter_name_label));
+		logger.info("***** List of cabs page loaded successfully  *****");
 		
 		//applying an specific filter option
 		js.executeScript("arguments[0].click();",specific_cab_type_checkbox);
+		logger.info("***** Clicked the specific cab type checkbox  *****");
 		
 		//waiting until the filter option is applied and some result is returned
+		logger.info("***** Waiting for the list of cabs page to load after applying filter *****");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(vehicle_image));
+		logger.info("***** After applying filter cabs page loaded successfully  *****");
 		
 		
 		//waiting until the new cab's price is loaded

@@ -73,10 +73,12 @@ public class HomePage extends BasePage{
 	public void closeDialog() {
 		try {
 			//waiting for the dialog box to appear
+			logger.info("***** Waiting for the 'login' pop up to load  *****");
 			wait.until(ExpectedConditions.visibilityOfElementLocated(login_dialog));
-			
-			//closing the dialog button after it appears
+			logger.info("***** Login popup appeared successfully  *****");
+			//closing the dialog button after it appears			
 			driver.findElement(login_dialog).click();
+			logger.info("***** Closed the login popup  *****");
 		}catch(Exception e) {
 			return;
 		}
@@ -88,26 +90,34 @@ public class HomePage extends BasePage{
 		
 		//switching to cabs section
 		cabs_button.click();
-		
+		logger.info("***** Switched to Cabs Section  *****");		
 		//waiting until the cabs section is displayed 
+		logger.info("***** Waiting for the Cabs section to load  *****");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(search_button));
+		logger.info("***** Cabs Section loaded successfully  *****");
 	}
 	
 	public void clickHotelsSection() {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(search_button));
+		logger.info("***** Waiting for the Home Page to load  *****");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(search_button));		
+		logger.info("***** Home Page Loaded Successfully  *****");
 		js.executeScript("arguments[0].click();",hotels_button);
+		logger.info("***** Switched to Hotels Section  *****");
 		
 	}
 	
 	public String getHotelData() {
+		logger.info("***** Waiting for the hotels section to load  *****");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(for_guest_label));
+		
+		logger.info("***** Hotels section loaded successfully  *****");
 		driver.findElement(for_guest_label).click();
+		logger.info("***** Clicked Rooms & Guests Section  *****");
 		
 		adult_dropdown.click();
-		
+		logger.info("***** Clicked Adults dropdown  *****");
 		List<WebElement> noOfAdults = driver.findElements(adult_count_options);
-		return noOfAdults.size()+"";
-		
+		return noOfAdults.size()+"";		
 	}
 	
 	
@@ -121,17 +131,23 @@ public class HomePage extends BasePage{
 		//first we need to click the fake input box and second click the next input box and then,
 		//enter values in the second input box
 		fake_from_input_box.click();
+		logger.info("***** Clicked the hidden 'from' input box  *****");
 		
 		//waiting until the main input box(second input box)appears 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(main_from_input_box));
 		
 		//clicking the main input box and sending the values 
 		driver.findElement(main_from_input_box).click();
+		logger.info("***** Clicked the main 'from' input box  *****");
 		driver.findElement(main_from_input_box).sendKeys(from);
+		logger.info("***** Sent values to the main 'from' input box  *****");
 		
 		//waiting for the recommendation to complete and clicking the first recommended city
 		wait.until(ExpectedConditions.visibilityOfElementLocated(first_recommended_from_city));
+		logger.info("***** Waiting for the 'from' cities to be recommended  *****");
 		driver.findElement(first_recommended_from_city).click();
+		logger.info("***** Clicked the first recommended 'from' city  *****");
+		
 		
 		//in "from" and "to" input boxes the logic are same but,
 		//in "from" input box we need to click both the fake and main input boxes and send input to the main
@@ -139,22 +155,27 @@ public class HomePage extends BasePage{
 		//in "to" input box automatically both the fake and real input boxes will be clicked and so just sending 
 		//the values		
 		main_to_input_box.sendKeys(to);
+		logger.info("***** Sent values to the main 'to' input box  *****");
 		
 		//waiting until the "to" cities are recommended
 		wait.until(ExpectedConditions.textToBe(recommended_cities_label,"SUGGESTIONS"));
-		
+		logger.info("***** Waiting for the 'to' cities to be recommended  *****");
 		driver.findElement(first_recommended_to_city).click();
+		logger.info("***** Clicked the first 'to' recommended city  *****");
 		
 		//clicking the date section
 		sample_presented_date_label.click();
+		logger.info("***** Clicked the dates section *****");
 		
 		By departure_date_value_button = By.xpath("//div[@aria-label='"+date+"']");
 		//wating for the custom date section to be appeared
 		wait.until(ExpectedConditions.visibilityOfElementLocated(departure_date_value_button));
 		driver.findElement(departure_date_value_button).click();
+		logger.info("***** Clicked the required date *****");
 		
 		//clicking the pickup time button
 		sample_pick_up_time_button.click();
+		logger.info("***** Clicked the pickup time section *****");
 		
 		WebElement hour_value_button = driver.findElement(By.xpath("//span[contains(@class,'hrSlotItemChild') and text()='"+pickUpHr+"']/parent::li"));
 		WebElement min_value_button = driver.findElement(By.xpath("//span[@class='minSlotItemChild' and text()='"+pickUpMin+"']/parent::li"));
@@ -163,52 +184,27 @@ public class HomePage extends BasePage{
 		
 		//clicking the hr value from dropdown
 		js.executeScript("arguments[0].click();",hour_value_button );
+		logger.info("***** Hour value set *****");
 		
 
 		//clicking the min value from dropdown
 		js.executeScript("arguments[0].click();", min_value_button);
+		logger.info("***** Minutes value set *****");
 		
 		//clicking the meredian value from dropdown
 		js.executeScript("arguments[0].click();",meridian_slot_value);
-		
+		logger.info("***** Meredian value set *****");
 		//clicking the apply button
 		js.executeScript("arguments[0].click();",apply_pickUp_time_button);
-		
+		logger.info("***** Clicked the apply button *****");
 		//clicking the search button		
-		driver.findElement(search_button).click();		
+		driver.findElement(search_button).click();	
+		logger.info("***** After entering all the data search button is clicked *****");
 	}
 	
 	public void relocateToHomePage() {		
-		js.executeScript("arguments[0].click();",home_page_relocator);		
+		
+		js.executeScript("arguments[0].click();",home_page_relocator);
+		logger.info("***** Relocated to home page *****");
 	}
-	
-	
-//	public static void main(String[] args) throws InterruptedException {
-//		WebDriver driver = new ChromeDriver();
-//		
-//		driver.manage().window().maximize();		
-//		driver.get("https://www.makemytrip.com/");
-//		
-//		
-//		HomePage h = new HomePage(driver);
-//		
-//		h.closeDialog();
-//		h.clickCabsSection();
-//		h.fillCabData();
-//		
-//		CabsPage c = new CabsPage(driver);
-//		c.getPriceDetails();
-//		
-//		h.relocateToHomePage();
-//		
-//		GiftPage g = new GiftPage(driver);
-//		g.switchToGiftsSection();
-//		
-//		g.fillGiftSection();
-//		
-//		h.relocateToHomePage();
-//		
-//		h.clickHotelsSection();
-//		h.getHotelData();
-//	}
 }

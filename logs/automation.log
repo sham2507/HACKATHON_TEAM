@@ -1,0 +1,122 @@
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 1 ms.
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 2 ms.
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 15 ms.
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 1 ms.
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-09-20 00:14:17 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\2355257\AppData\Local\Temp\testng-eclipse--1632584343\testng-customsuite.xml
+
+2024-09-20 00:14:17 INFO  Utils:112 - [Utils] DynamicGraphHelper.createDynamicGraph() took 3 ms.
+2024-09-20 00:14:28 INFO  GiftPage:55 - ***** Waiting for the home page to load  *****
+2024-09-20 00:14:30 INFO  GiftPage:58 - ***** Home Page loaded successfully  *****
+2024-09-20 00:14:30 INFO  GiftPage:60 - ***** Clicked Gifts section  *****
+2024-09-20 00:14:32 INFO  GiftPage:73 - ***** Switched to new window *****
+2024-09-20 00:14:32 INFO  GiftPage:74 - ***** Waiting for the gift page to load *****
+2024-09-20 00:14:32 INFO  GiftPage:77 - ***** Gift page loaded successfully  *****
+2024-09-20 00:14:32 INFO  GiftPage:79 - ***** Clicked the birthday gift button  *****
+2024-09-20 00:14:32 INFO  GiftPage:84 - ***** Waiting for the Birthday gift page to load  *****
+2024-09-20 00:14:33 INFO  GiftPage:86 - ***** Birthday gift page loaded successfully  *****
+2024-09-20 00:14:33 INFO  GiftPage:89 - ***** Cleared the previous already existed value of the amount input  *****
+2024-09-20 00:14:33 INFO  GiftPage:91 - ***** Set value to the amount input *****
+2024-09-20 00:14:33 INFO  GiftPage:98 - ***** Clicked quantity increase button 5 times *****
+2024-09-20 00:14:33 INFO  GiftPage:100 - ***** Toggled multipe person checkbox  *****
+2024-09-20 00:14:34 INFO  GiftPage:108 - ***** Entered values in 5 input boxes  *****
+2024-09-20 00:14:34 INFO  GiftPage:112 - ***** Set name value  *****
+2024-09-20 00:14:34 INFO  GiftPage:115 - ***** Set phone number value  *****
+2024-09-20 00:14:34 INFO  GiftPage:118 - ***** Set invalid email id  *****
+2024-09-20 00:14:34 INFO  GiftPage:121 - ***** Clicked the buy now button  *****
+2024-09-20 00:14:40 INFO  Utils:112 - [TestNG] Time taken by org.testng.reporters.jq.Main@27df95e: 58 ms
+2024-09-20 00:14:40 INFO  Utils:112 - [TestNG] Time taken by org.testng.reporters.FailedReporter@b46e103: 0 ms
+2024-09-20 00:14:40 INFO  Utils:112 - [TestNG] Time taken by org.testng.reporters.XMLReporter@575c3e9b: 7 ms
+2024-09-20 00:14:40 INFO  Utils:112 - [TestNG] Time taken by org.testng.reporters.EmailableReporter2@48a663e9: 7 ms
+2024-09-20 00:14:40 INFO  Utils:112 - [TestNG] Time taken by org.testng.reporters.JUnitReportReporter@3ba348ca: 4 ms
+2024-09-20 00:14:40 INFO  Utils:112 - [TestNG] Time taken by org.testng.internal.ExitCodeListener@56e9a474: 0 ms
+2024-09-20 00:20:50 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\2355257\Desktop\LEARN_AUTOMATION\automation\HACKATHON_TEAM\testng.xml
+
+2024-09-20 00:20:57 INFO  TC_001_Cab_Booking:38 - ***** Test Case 01 Started *****
+2024-09-20 00:20:57 INFO  HomePage:76 - ***** Waiting for the 'close' pop up to load  *****
+2024-09-20 00:20:57 INFO  HomePage:78 - ***** Close popup appeared successfully  *****
+2024-09-20 00:20:57 INFO  HomePage:81 - ***** Closed the login popup  *****
+2024-09-20 00:20:58 INFO  HomePage:93 - ***** Switched to Cabs Section  *****
+2024-09-20 00:20:58 INFO  HomePage:95 - ***** Waiting for the Cabs section to load  *****
+2024-09-20 00:20:58 INFO  HomePage:97 - ***** Cabs Section loaded successfully  *****
+2024-09-20 00:20:58 INFO  HomePage:134 - ***** Clicked the hidden 'from' input box  *****
+2024-09-20 00:20:59 INFO  HomePage:141 - ***** Clicked the main 'from' input box  *****
+2024-09-20 00:20:59 INFO  HomePage:143 - ***** Sent values to the main 'from' input box  *****
+2024-09-20 00:20:59 INFO  HomePage:147 - ***** Waiting for the 'from' cities to be recommended  *****
+2024-09-20 00:20:59 INFO  HomePage:149 - ***** Clicked the first recommended 'from' city  *****
+2024-09-20 00:20:59 INFO  HomePage:158 - ***** Sent values to the main 'to' input box  *****
+2024-09-20 00:21:00 INFO  HomePage:162 - ***** Waiting for the 'to' cities to be recommended  *****
+2024-09-20 00:21:00 INFO  HomePage:164 - ***** Clicked the first 'to' recommended city  *****
+2024-09-20 00:21:00 INFO  HomePage:168 - ***** Clicked the dates section *****
+2024-09-20 00:21:00 INFO  HomePage:174 - ***** Clicked the required date *****
+2024-09-20 00:21:01 INFO  HomePage:178 - ***** Clicked the pickup time section *****
+2024-09-20 00:21:01 INFO  HomePage:187 - ***** Hour value set *****
+2024-09-20 00:21:01 INFO  HomePage:192 - ***** Minutes value set *****
+2024-09-20 00:21:01 INFO  HomePage:196 - ***** Meredian value set *****
+2024-09-20 00:21:01 INFO  HomePage:199 - ***** Clicked the apply button *****
+2024-09-20 00:21:03 INFO  HomePage:202 - ***** After entering all the data search button is clicked *****
+2024-09-20 00:21:03 INFO  CabsPage:33 - ***** Waiting for the list of cabs page to load  *****
+2024-09-20 00:21:04 INFO  CabsPage:35 - ***** List of cabs page loaded successfully  *****
+2024-09-20 00:21:04 INFO  CabsPage:39 - ***** Clicked the specific cab type checkbox  *****
+2024-09-20 00:21:04 INFO  CabsPage:42 - ***** Waiting for the list of cabs page to load after applying filter *****
+2024-09-20 00:21:04 INFO  CabsPage:44 - ***** After applying filter cabs page loaded successfully  *****
+2024-09-20 00:21:04 INFO  TC_001_Cab_Booking:53 - ***** Test Case 01 Completed Execution *****
+2024-09-20 00:21:34 INFO  TC_002_Gift_Selection:37 - ***** Test Case 002 started execution  *****
+2024-09-20 00:21:34 INFO  GiftPage:55 - ***** Waiting for the home page to load  *****
+2024-09-20 00:21:35 INFO  GiftPage:58 - ***** Home Page loaded successfully  *****
+2024-09-20 00:21:35 INFO  GiftPage:60 - ***** Clicked Gifts section  *****
+2024-09-20 00:21:37 INFO  GiftPage:73 - ***** Switched to new window *****
+2024-09-20 00:21:37 INFO  GiftPage:74 - ***** Waiting for the gift page to load *****
+2024-09-20 00:21:37 INFO  GiftPage:77 - ***** Gift page loaded successfully  *****
+2024-09-20 00:21:38 INFO  GiftPage:79 - ***** Clicked the birthday gift button  *****
+2024-09-20 00:21:38 INFO  GiftPage:84 - ***** Waiting for the Birthday gift page to load  *****
+2024-09-20 00:21:38 INFO  GiftPage:86 - ***** Birthday gift page loaded successfully  *****
+2024-09-20 00:21:38 INFO  GiftPage:89 - ***** Cleared the previous already existed value of the amount input  *****
+2024-09-20 00:21:38 INFO  GiftPage:91 - ***** Set value to the amount input *****
+2024-09-20 00:21:38 INFO  GiftPage:98 - ***** Clicked quantity increase button 5 times *****
+2024-09-20 00:21:38 INFO  GiftPage:100 - ***** Toggled multipe person checkbox  *****
+2024-09-20 00:21:39 INFO  GiftPage:108 - ***** Set recipient values in 5 input boxes  *****
+2024-09-20 00:21:39 INFO  GiftPage:112 - ***** Set name value  *****
+2024-09-20 00:21:39 INFO  GiftPage:115 - ***** Set phone number value  *****
+2024-09-20 00:21:39 INFO  GiftPage:118 - ***** Set invalid email id  *****
+2024-09-20 00:21:39 INFO  GiftPage:121 - ***** Clicked the buy now button  *****
+2024-09-20 00:21:39 INFO  TC_002_Gift_Selection:46 - ***** Test case 002 completed execution  *****
+2024-09-20 00:22:10 INFO  TC_003_Hotel_Booking:34 - ***** Test Case 003 started execution  *****
+2024-09-20 00:22:10 INFO  HomePage:76 - ***** Waiting for the 'close' pop up to load  *****
+2024-09-20 00:22:10 INFO  HomePage:78 - ***** Close popup appeared successfully  *****
+2024-09-20 00:22:11 INFO  HomePage:81 - ***** Closed the login popup  *****
+2024-09-20 00:22:11 INFO  HomePage:101 - ***** Waiting for the Home Page to load  *****
+2024-09-20 00:22:11 INFO  HomePage:103 - ***** Home Page Loaded Successfully  *****
+2024-09-20 00:22:11 INFO  HomePage:105 - ***** Switched to Hotels Section  *****
+2024-09-20 00:22:11 INFO  HomePage:110 - ***** Waiting for the hotels section to load  *****
+2024-09-20 00:22:12 INFO  HomePage:113 - ***** Hotels section loaded successfully  *****
+2024-09-20 00:22:12 INFO  HomePage:115 - ***** Clicked Rooms & Guests Section  *****
+2024-09-20 00:22:12 INFO  HomePage:118 - ***** Clicked Adults dropdown  *****
+2024-09-20 00:22:12 INFO  TC_003_Hotel_Booking:43 - ***** Test Case 003 completed execution  *****
