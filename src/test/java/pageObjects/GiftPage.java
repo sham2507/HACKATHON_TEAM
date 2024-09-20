@@ -52,9 +52,12 @@ public class GiftPage extends BasePage{
 	
 	
 	public void switchToGiftsSection() {
+		logger.info("***** Waiting for the home page to load  *****");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(gift_element_button));
 		
+		logger.info("***** Home Page loaded successfully  *****");
 		js.executeScript("arguments[0].click();",driver.findElement(gift_element_button));
+		logger.info("***** Clicked Gifts section  *****");
 		
 		Set<String> idSet = driver.getWindowHandles();
 		List<String> idList = new ArrayList<String>(idSet);
@@ -67,43 +70,58 @@ public class GiftPage extends BasePage{
 			}
 		}
 		
+		logger.info("***** Switched to new window *****");
+		logger.info("***** Waiting for the gift page to load *****");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(birthday_gift_button));
 		
+		logger.info("***** Gift page loaded successfully  *****");
 		js.executeScript("arguments[0].click();",driver.findElement(birthday_gift_button));
+		logger.info("***** Clicked the birthday gift button  *****");
+		
 	}
 	
 	public String fillGiftSection(String amt, String senderName, String senderMobileNo,String senderEmailId,String quantity) {
+		logger.info("***** Waiting for the Birthday gift page to load  *****");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(choose_amount_label));
+		logger.info("***** Birthday gift page loaded successfully  *****");
 		
 		amount_input.clear();
+		logger.info("***** Cleared the previous already existed value of the amount input  *****");
 		amount_input.sendKeys(amt);
-		System.out.println(quantity);
+		logger.info("***** Set value to the amount input *****");
+
 		
 		for(int i = 0;i<Integer.parseInt(quantity)-1;i++) {
 			js.executeScript("arguments[0].click();",quantity_increase_button);
 		}
 		
+		logger.info("***** Clicked quantity increase button "+quantity+" times *****");
 		js.executeScript("arguments[0].click();",toggle_multiple_person_checkbox);
-		
+		logger.info("***** Toggled multipe person checkbox  *****");
 		
 		
 		for(int i = 1;i<=Integer.parseInt(quantity);i++) {			
 			WebElement recipient_input = driver.findElement(By.xpath("//input[@name='Recipient "+i+"']"));
 			recipient_input.sendKeys(RandomStringUtils.randomNumeric(10));
 		}
+		
+		logger.info("***** Set recipient values in "+quantity+" input boxes  *****");
 				
 		
 		sender_name_input.sendKeys(senderName);
+		logger.info("***** Set name value  *****");
 		
 		sender_mobile_no_input.sendKeys(senderMobileNo);
+		logger.info("***** Set phone number value  *****");
 		
 		sender_email_input.sendKeys(senderEmailId);
+		logger.info("***** Set invalid email id  *****");
 		
 		submit_button.click();
+		logger.info("***** Clicked the buy now button  *****");
 		
 		String errorMsg = email_error_label.getText();			
-		return errorMsg;
-		
+		return errorMsg;		
 	}
 	
 	
