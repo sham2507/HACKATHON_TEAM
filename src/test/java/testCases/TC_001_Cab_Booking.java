@@ -48,7 +48,7 @@ public class TC_001_Cab_Booking {
 		//optimize it in the way like, get the list of all the prices and sort it and do it in the way
 		String expected_result = "₹ 5,824";
 		boolean verificationResult = c.getPriceDetails();
-		//h.relocateToHomePage();
+		h.relocateToHomePage();
 		Assert.assertTrue(verificationResult);
 		logger.info("***** Test Case 01 Completed Execution *****");
 		
