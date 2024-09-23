@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" name="Test_Firefox(failed)">
+    <parameter name="browserType" value="firefox"/>
     <classes>
       <class name="testCases.TC_002_Gift_Selection">
         <methods>
@@ -11,5 +12,5 @@
         </methods>
       </class> <!-- testCases.TC_002_Gift_Selection -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Test_Firefox(failed) -->
 </suite> <!-- Failed suite [Suite] -->

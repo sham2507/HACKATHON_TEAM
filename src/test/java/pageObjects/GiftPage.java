@@ -59,6 +59,7 @@ public class GiftPage extends BasePage{
 		js.executeScript("arguments[0].click();",driver.findElement(gift_element_button));
 		logger.info("***** Clicked Gifts section  *****");
 		
+		
 		Set<String> idSet = driver.getWindowHandles();
 		List<String> idList = new ArrayList<String>(idSet);
 		

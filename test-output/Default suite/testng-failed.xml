@@ -6,7 +6,7 @@
       <class name="testCases.TC_001_Cab_Booking">
         <methods>
           <include name="setUp"/>
-          <include name="verifyMinimumPrice"/>
+          <include name="verifyMinimumPrice" invocation-numbers="0"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- testCases.TC_001_Cab_Booking -->

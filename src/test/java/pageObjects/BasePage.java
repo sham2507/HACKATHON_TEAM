@@ -20,7 +20,7 @@ public class BasePage {
 		this.driver = driver;
 		logger=LogManager.getLogger(this.getClass());
 		js = (JavascriptExecutor)this.driver;
-		wait = new WebDriverWait(this.driver,Duration.ofSeconds(10));
+		wait = new WebDriverWait(this.driver,Duration.ofSeconds(15));
 		PageFactory.initElements(driver,this);
 	}
 

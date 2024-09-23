@@ -46,8 +46,10 @@ public class HomePage extends BasePage{
 	@FindBy(xpath="//*[@id='top-banner']/div[2]/div/div/div[2]/div[1]/div[3]/label")
 	WebElement sample_presented_date_label;
 	
+	@FindBy(xpath="//span[@aria-label='Previous Month']")
+	WebElement previous_month_button;
 	
-	
+	By next_month_locator = By.xpath("//span[@aria-label='Next Month']");
 	
 	
 	@FindBy(xpath="//*[@id=\"top-banner\"]/div[2]//label[@for='pickupTime']")
@@ -60,6 +62,7 @@ public class HomePage extends BasePage{
 
 	@FindBy(xpath="//a[@class='chMmtLogo']")
 	WebElement home_page_relocator;	
+	
 	
 	By for_guest_label = By.xpath("//label[@for='guest']");
 	
@@ -167,6 +170,21 @@ public class HomePage extends BasePage{
 		sample_presented_date_label.click();
 		logger.info("***** Clicked the dates section *****");
 		
+		List<WebElement> ds = driver.findElements(By.xpath("//div[@class='DayPicker-Caption']/div"));
+		
+		
+		while(true) {
+			if(isMonthPresent(ds,date.substring(4, 7)) == false) {
+				js.executeScript("arguments[0].click();",driver.findElement(next_month_locator));
+				ds = driver.findElements(By.xpath("//div[@class='DayPicker-Caption']/div"));
+			}
+			else {
+				break;
+			}			
+		}
+		
+		
+		
 		By departure_date_value_button = By.xpath("//div[@aria-label='"+date+"']");
 		//wating for the custom date section to be appeared
 		wait.until(ExpectedConditions.visibilityOfElementLocated(departure_date_value_button));
@@ -202,9 +220,19 @@ public class HomePage extends BasePage{
 		logger.info("***** After entering all the data search button is clicked *****");
 	}
 	
-	public void relocateToHomePage() {		
-		
+	public void relocateToHomePage() {
 		js.executeScript("arguments[0].click();",home_page_relocator);
 		logger.info("***** Relocated to home page *****");
+	}
+	
+	
+	private static boolean isMonthPresent(List<WebElement> month_year_data,String requiredMonth){
+		for(WebElement month : month_year_data) {
+			if(month.getText().substring(0, 3).equals(requiredMonth)) {
+				return true;
+			}
+			System.out.println(month.getText().substring(0, 3));			
+		}
+		return false;
 	}
 }
